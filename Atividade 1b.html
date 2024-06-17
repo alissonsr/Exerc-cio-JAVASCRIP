@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 b)</title>
+    <style>
+        .APROVADO {
+          color: blue;
+        }
+        .REPROVADO {
+          color: red;
+        }
+      </style>
+      </head>
+      <body>
+      ATIVIDADE 1 
+      <p>b)</p>
+        <p>
+        Preencha as notas abaixo:
+      </p>
+      Nota 1: <input type="number" id="nota1" placeholder="Insira a nota1(de 0 a 10)"><br>
+      Nota 2: <input type="number" id="nota2" placeholder="Insira a nota2(de 0 a 10)"><br>
+      <button onclick="calcularMedia()">Calcular Média</button>
+      
+      <p>Média: <span id="media"></span></p>
+      <p>Situação: <span id="situacao"></span></p>
+      
+      <script>
+      function calcularMedia() {
+        var nota1 = parseFloat(document.getElementById('nota1').value);
+        var nota2 = parseFloat(document.getElementById('nota2').value);
+        var media = (nota1 + nota2) / 2;
+        var situacao = "";
+        var cor = "";
+      
+        if (media >= 6) {
+          situacao = "APROVADO";
+          cor = "APROVADO";
+        } else {
+          situacao = "REPROVADO";
+          cor = "REPROVADO";
+        }
+      
+        document.getElementById('media').innerHTML = media;
+        document.getElementById('situacao').className = cor;
+        document.getElementById('situacao').innerHTML = situacao;
+      }
+      </script>
+    <a href="index.html">🏠 VOLTAR PARA PÁGINA PRINCIPAL</a>
+</body>
+</html>

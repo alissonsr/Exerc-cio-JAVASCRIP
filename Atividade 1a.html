@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE 1 a)</title>
+    <style>
+        .APROVADO {
+            color: blue;
+        }
+        .REPROVADO {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    ATIVIDADE 1 
+      <p>a)</p>
+        <p>
+    <h3>Média do Aluno</h3>
+
+<span id="media"></span><br>
+<span id="situacao"></span>
+
+<script>
+function calcularMedia() {
+    var nota1 = prompt("Informe a nota1: (de 0 a 10)");
+    var nota2 = prompt("Informe a nota2: (de 0 a 10)");
+    var media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+    
+    document.getElementById('media').innerHTML = "Média: " + media;
+    
+    if(media >= 6) {
+        document.getElementById('situacao').innerHTML = "ALUNO APROVADO";
+        document.getElementById('situacao').className = "APROVADO";
+    } else {
+        document.getElementById('situacao').innerHTML = "ALUNO REPROVADO";
+        document.getElementById('situacao').className = "REPROVADO";
+    }
+}
+
+// Chama a função calcularMedia quando a página é carregada
+window.onload = calcularMedia;
+</script>
+<p><a href="index.html">🏠 VOLTAR PARA PÁGINA PRINCIPAL</a></p>
+</body>
+</html>

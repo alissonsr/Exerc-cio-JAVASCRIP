@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE 2 - Cálculo do IMC</title>
+<style>
+  .NORMAL {
+    color: green;
+  }
+  .ALERTA {
+    color: orange;
+  }
+  .PERIGO {
+    color: red;
+  }
+</style>
+</head>
+<body>
+<H1>ATIVIDADE 2 - CÁLCULO DO IMC</H1>
+
+Peso (kg): <input type="number" id="peso" placeholder="Insira seu peso em Kg"><br>
+Altura (m): <input type="number" id="altura" step="0.01" placeholder="Insira sua altura em metros"><br>
+<button onclick="calcularIMC()">Calcular IMC</button>
+
+<p>IMC: <span id="imc"></span></p>
+<p>Situação: <span id="situacao"></span></p>
+
+<script>
+function calcularIMC() {
+  var peso = parseFloat(document.getElementById('peso').value);
+  var altura = parseFloat(document.getElementById('altura').value);
+  var imc = peso / (altura * altura);
+  var situacao = "";
+  var cor = "";
+
+  if (imc < 17) {
+    situacao = "Muito abaixo do peso";
+    cor = "PERIGO";
+  }
+  else if (imc >= 17 && imc <= 18.49) {
+    situacao = "Abaixo do peso";
+    cor = "ALERTA";
+  } 
+  else if (imc >= 18.5 && imc <= 24.99) {
+    situacao = "Peso normal";
+    cor = "NORMAL";
+  } 
+  else if (imc >= 25 && imc <= 29.99) {
+    situacao = "Acima do peso";
+    cor = "ALERTA";
+  } 
+  else if (imc >= 30 && imc <= 34.99) {
+    situacao = "Obesidade I";
+    cor = "PERIGO";
+  }
+  else if (imc >= 35 && imc <= 39.99) {
+    situacao = "Obesidade II - SEVERA";
+    cor = "PERIGO";
+  }
+  else if (imc >= 40) {
+    situacao = "Obesidade III - MÓRBIDA";
+    cor = "PERIGO";
+  }
+
+  document.getElementById('imc').innerHTML = imc.toFixed(4);
+  document.getElementById('situacao').className = cor;
+  document.getElementById('situacao').innerHTML = situacao;
+}
+</script>
+<a href="index.html">🏠 VOLTAR PARA PÁGINA PRINCIPAL</a>
+</body>
+</html>

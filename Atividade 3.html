@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE 3</title>
+<style>
+    .red { color: red; }
+    .blue { color: blue; }
+    .green { color: green; }
+    </style>
+    </head>
+    <body>
+    <h4>ADICIONE NOVOS ELEMENTES À LISTA:</h4>
+    <input type="text" id="textoItem" placeholder="Texto do item">
+    <br>
+    <p>Escolha a cor de texto do item:</p>
+    <input type="radio" id="vermelho" name="cores" value="red">
+    <label for="vermelho">Vermelho</label><br>
+    <input type="radio" id="azul" name="cores" value="blue">
+    <label for="azul">Azul</label><br>
+    <input type="radio" id="verde" name="cores" value="green">
+    <label for="verde">Verde</label><br>
+    <input type="radio" id="preto" name="cores" value="black">
+    <label for="preto">Preto</label><br>
+    <br>
+    <button id="btnAdicionar">Adicionar Item</button>
+    
+    <ul id="minhaLista">
+      <li>Café</li>
+      <li>Chá</li>
+      <li>Água</li>
+    </ul>
+    
+    <script>
+    document.getElementById("btnAdicionar").addEventListener("click", function() {
+      var li = document.createElement("li");
+      var texto = document.getElementById("textoItem").value;
+      var cor = document.querySelector('input[name="cores"]:checked').value;
+      li.textContent = texto;
+      li.className = cor;
+      document.getElementById("minhaLista").appendChild(li);
+    });
+    </script>
+    <a href="index.html">🏠 VOLTAR PARA PÁGINA PRINCIPAL</a>
+    </body>
+    </html>
